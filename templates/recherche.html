@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <br>
+    <h2>Résultat de votre recherche :</h2>
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <div class="row">
+                {%  if lFilms|length == 0 %}
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Aucun film trouvé</h5>
+                        </div>
+                    </div>
+                </div>
+
+                {%else %}
+                       {% for film in lFilms %}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img src="./static/images/{{ film.affiche_film }}" class="card-img-top" alt="Image du film {{ film.titre_film }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ film.titre_film }}</h5>
+                                <a href="{{ url_for('film') }}?id={{ film.id_film }}" class="btn btn-primary">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+               {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

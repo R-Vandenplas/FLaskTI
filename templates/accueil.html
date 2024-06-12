@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Accueil</h2>
+{% for genre in genres %}
+    <a href="{{ url_for('genres') }}?genre={{ genre }}" class="btn btn-primary">{{ genre }}</a>
+{% endfor %}
+{% endblock content %}

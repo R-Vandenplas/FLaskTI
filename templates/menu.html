@@ -1,0 +1,37 @@
+
+<div class="navigation">
+    <ul class="nav nav-tabs nav-justified nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('accueil') }}">Accueil</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('films') }}">Films</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Catégories</a>
+            <ul class="dropdown-menu dropdown-fluid">
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Action">Action</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Aventure">Aventure</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Crime">Crime </a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Drame">Drame</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Fantaisie">Fantaisie</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Horreur">Horreur</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Romance">Romance</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('genres') }}?genre=Science-fiction">Science-fiction</a></li>
+
+            </ul>
+        </li>
+
+        <li>
+            <form class="d-flex" role="search">
+                <input id="nom_recherche" class="form-control me-2" type="search" placeholder="Rechercher un film" aria-label="Search">
+                <button id="btn_recherche" class="btn btn-primary" type="submit" >Chercher</button>
+            </form>
+        </li>
+    </ul>
+</div>
+<section class="hero">
+    <h2>Découvrez le monde du cinéma avec nous</h2>
+    <p>Plongez dans une expérience cinématographique inoubliable.</p>
+    <a href="{{ url_for('films') }}"><button class="btn btn-warning" >Voir les films à l'affiche</button></a>
+</section>
